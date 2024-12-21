@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
-  <script>
-    navigator.vibrate([200, 100, 200]);
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibration API Example</title>
 </head>
 <body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-  <script>
-    navigator.vibrate([200, 100, 200]);
-    console.log('1')
-  </script>
+    <button onclick="vibrate()">Vibrate!</button>
+    <script>
+        function vibrate() {
+            if ("vibrate" in navigator) {
+                navigator.vibrate([300, 200, 300]);
+            } else {
+                alert("Vibration API not supported");
+            }
+        }
+    </script>
 </body>
 </html>
